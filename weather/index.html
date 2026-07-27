@@ -27,12 +27,14 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 16px;
+            padding: 8px;
+            margin: 0;
         }
         .card {
-            width: 340px;
+            width: 100%;
+            max-width: 340px;
             border-radius: 28px;
-            padding: 28px;
+            padding: clamp(16px, 5vw, 28px);
             color: white;
             position: relative;
             overflow: hidden;
@@ -40,6 +42,7 @@
             text-shadow: 0 1px 4px rgba(0,0,0,0.25);
             transition: background 0.5s ease, border 0.3s ease;
             border: 1px solid var(--card-border-dark);
+            flex-shrink: 0;
         }
         body.light-mode .card {
             border: 1px solid var(--card-border-light);
@@ -382,7 +385,7 @@
         }
         .temp-box { text-align: left; }
         .temp {
-            font-size: 4.2em;
+            font-size: clamp(2.5em, 12vw, 4.2em);
             font-weight: 200;
             line-height: 1;
             letter-spacing: -2px;
@@ -399,7 +402,7 @@
             margin-top: 4px;
         }
         .icon-box {
-            font-size: 4em;
+            font-size: clamp(2.5em, 10vw, 4em);
             line-height: 1;
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
@@ -414,7 +417,7 @@
         .hi-lo {
             display: flex;
             justify-content: center;
-            gap: 24px;
+            gap: clamp(12px, 4vw, 24px);
             margin-bottom: 16px;
             position: relative;
             z-index: 3;
